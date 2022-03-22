@@ -1,5 +1,6 @@
-import { IUser, IEmployee } from './interfaces';
+import { IUser, IEmployee } from '../interfaces';
 
+//#region User
 class User implements IUser {
   public firstName: string;
   public lastName: string;
@@ -23,15 +24,8 @@ class User implements IUser {
     this.firstName = fn[0];
     this.lastName = fn[1];
   }
-
-  public get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-
-  public get getInfo() {
-    return `FullName: ${this.fullName}, City: ${this.city}, Country: ${this.country}`;
-  }
 }
+//#endregion
 
 //#region Employee
 class Employee implements IEmployee {
@@ -57,22 +51,22 @@ class Employee implements IEmployee {
     this.firstName = fn[0];
     this.lastName = fn[1];
   }
-
-  public get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-
-  public get getInfo() {
-    return `FullName: ${this.fullName}, City: ${this.city}, Branch: ${this.branch}`;
-  }
 }
 //#endregion
 
-let user = new User('Evgenii', 'Kolesnikov', 'Vrn', 'Rus');
+abstract class Info {
+  public static fullName(obj: User | Employee) {
+    return `abstract static fullName: ${obj.firstName} ${obj.lastName}`
+  }
+  public static getInfo(obj: User | Employee) {
+    return `abstract static getInfo: ${obj.firstName} ${obj.lastName} , City: ${obj.city} department`
+  }
+}
 
-// tsc --target es2015 --module none .\solution1.ts
-// node .\solution1.js
-
+let user = new User('Evgenii', 'Kolesnikov', 'Vrn', 'RF');
 console.log(user);
-console.log(user.fullName);
-console.log(user.getInfo);
+console.log(Info.fullName(user));
+console.log(Info.getInfo(user));
+
+// tsc --target es2015 --module none .\old\solution4.ts
+// node .\old\solution4.js

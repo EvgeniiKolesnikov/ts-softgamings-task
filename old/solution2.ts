@@ -1,4 +1,4 @@
-import { IUser, IEmployee } from './interfaces';
+import { IUser, IEmployee } from '../interfaces';
 
 class User implements IUser {
   public firstName: string
@@ -24,8 +24,8 @@ class User implements IUser {
 
 let user = new User('Evgenii', 'Kolesnikov', 'Vrn', 'Rus');
 
-// tsc --target es2015 --module none .\solution2.ts
-// node .\solution2.js
+// tsc --target es2015 --module none .\old\solution2.ts
+// node .\old\solution2.js
 
 console.log(user.fullName())
 console.log(user.getInfo())

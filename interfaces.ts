@@ -1,13 +1,11 @@
-interface IPerson {
+export interface IPerson {
   firstName: string;
   lastName: string;
   city: string;
 }
-interface IUser extends IPerson {
+export interface IUser extends IPerson {
   country: string;
 }
-interface IEmployee extends IPerson {
+export interface IEmployee extends IPerson {
   branch: string;
 }
-
-export { IUser, IEmployee };

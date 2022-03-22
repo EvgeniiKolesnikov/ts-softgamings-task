@@ -1,4 +1,4 @@
-import { IUser, IEmployee } from './interfaces';
+import { IUser, IEmployee } from '../interfaces';
 
 class User implements IUser {
   public firstName: string;
@@ -39,5 +39,5 @@ console.log(user);
 console.log(User.fullName(user));
 console.log(User.getInfo(user));
 
-// tsc --target es2015 --module none .\solution3.ts
-// node .\solution3.js
+// tsc --target es2015 --module none .\old\solution3.ts
+// node .\old\solution3.js
