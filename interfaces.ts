@@ -3,9 +3,9 @@ export interface IPerson {
   lastName: string;
   city: string;
 }
-export interface IUser extends IPerson {
+export interface IUser {
   country: string;
 }
-export interface IEmployee extends IPerson {
+export interface IEmployee {
   branch: string;
 }

@@ -46,12 +46,16 @@ employee.branch = 'Dev'
 // tsc --target es2015 --module none .\solution.ts
 // node .\solution.js
 
-console.log(user);
-console.log(user.country);
-console.log(user.fullName);
-console.log(user.getInfo);
+console.log(user);              // User {firstName: 'Evgenii', ... }
+console.log(user.firstName);    // Evgenii
+console.log(user.lastName);     // Kolesnikov
+console.log(user.country);      // Rus
+console.log(user.fullName);     // Evgenii Kolesnikov
+console.log(user.getInfo);      // FullName: Evgenii Kolesnikov, City: Vrn, Country: Rus
 
-console.log(employee);
-console.log(employee.branch);
-console.log(employee.fullName);
-console.log(employee.getInfo);
+console.log(employee);          // Employee {firstName: 'Elon', ... }
+console.log(employee.firstName);// Elon 
+console.log(employee.lastName); // Musk 
+console.log(employee.branch);   // Dev 
+console.log(employee.fullName); // Elon Musk
+console.log(employee.getInfo);  // FullName: Elon Musk, City: NY, Branch: Dev
